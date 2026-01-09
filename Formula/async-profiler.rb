@@ -18,7 +18,6 @@ class AsyncProfiler < Formula
 
   def install
     bin.install "bin/asprof"
-    lib.install Dir["lib/*"]
   end
 
   test do
