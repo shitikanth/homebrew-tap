@@ -5,18 +5,15 @@ class Qsv < Formula
   sha256 "735f366fb6272a772653c7106e42fd8b069a86d96eb0f9dbaf38945de09793ea"
   license any_of: ["MIT", "Unlicense"]
 
-  livecheck do
-    url :homepage
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
-    strategy :github_latest
-  end
-
   on_macos do
     # dathere publishes no x86_64-apple-darwin asset as of 22.0.1
     depends_on arch: :arm64
   end
 
   on_linux do
+    depends_on "openssl@3"
+    depends_on "wayland"
+
     on_arm do
       url "https://github.com/dathere/qsv/releases/download/22.0.1/qsv-22.0.1-aarch64-unknown-linux-gnu.zip"
       sha256 "b045bf3800fefdb9f7222a8db054cce2859a179ed5c14764a41aa362d6c8838b"
