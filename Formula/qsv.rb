@@ -1,6 +1,8 @@
 class Qsv < Formula
   desc "Ultra-fast CSV data-wrangling toolkit"
   homepage "https://qsv.dathere.com/"
+  url "https://github.com/dathere/qsv/releases/download/22.0.1/qsv-22.0.1-aarch64-apple-darwin.zip"
+  sha256 "735f366fb6272a772653c7106e42fd8b069a86d96eb0f9dbaf38945de09793ea"
   license any_of: ["MIT", "Unlicense"]
 
   livecheck do
@@ -12,11 +14,6 @@ class Qsv < Formula
   on_macos do
     # dathere publishes no x86_64-apple-darwin asset as of 22.0.1
     depends_on arch: :arm64
-
-    on_arm do
-      url "https://github.com/dathere/qsv/releases/download/22.0.1/qsv-22.0.1-aarch64-apple-darwin.zip"
-      sha256 "735f366fb6272a772653c7106e42fd8b069a86d96eb0f9dbaf38945de09793ea"
-    end
   end
 
   on_linux do
