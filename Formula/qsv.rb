@@ -38,8 +38,12 @@ class Qsv < Formula
   end
 
   def install
-    bin.install "qsv"
-    bin.install "qsvlite" if File.exist?("qsvlite")
+    %w[qsv qsvlite].each do |name|
+      next unless File.exist?(name)
+
+      libexec.install name
+      (bin/name).write_env_script libexec/name, QSV_NO_UPDATE: "1"
+    end
     doc.install Dir["README*", "THIRD_PARTY_NOTICES.md"]
 
     resource("completions-bash").stage { bash_completion.install "qsv.bash" => "qsv" }
@@ -52,9 +56,9 @@ class Qsv < Formula
       These are dathere's official prebuilt binaries, so unlike homebrew-core's
       qsv they include the Polars commands (sqlp, joinp, pivotp) and viz.
 
-      They are also built with the self_update feature. Set QSV_NO_UPDATE=1 to
-      stop qsv replacing the binary Homebrew manages:
-        export QSV_NO_UPDATE=1
+      They are built with the self_update feature, so the qsv in bin is a
+      wrapper that sets QSV_NO_UPDATE=1 to stop qsv replacing the binary
+      Homebrew manages.
     EOS
   end
 
