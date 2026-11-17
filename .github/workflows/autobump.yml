@@ -6,6 +6,7 @@ on:
       - main
     paths:
       - .github/workflows/autobump.yml
+  workflow_dispatch:
   schedule:
     # Every day at 15:25 UTC
     - cron: 25 15 * * *
