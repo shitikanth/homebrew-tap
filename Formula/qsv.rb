@@ -1,8 +1,8 @@
 class Qsv < Formula
   desc "Ultra-fast CSV data-wrangling toolkit"
   homepage "https://qsv.dathere.com/"
-  url "https://github.com/dathere/qsv/releases/download/22.0.1/qsv-22.0.1-aarch64-apple-darwin.zip"
-  sha256 "735f366fb6272a772653c7106e42fd8b069a86d96eb0f9dbaf38945de09793ea"
+  url "https://github.com/dathere/qsv/releases/download/29.0.0/qsv-29.0.0-aarch64-apple-darwin.zip"
+  sha256 "63a4cfde04eff5168bba3765ebfdcf04c6b8b27002911ccd183f076bef67dd53"
   license any_of: ["MIT", "Unlicense"]
 
   # dathere publishes no x86_64-apple-darwin asset as of 22.0.1
@@ -11,8 +11,8 @@ class Qsv < Formula
 
   # The release archives ship no completions, so pull them from the tagged source.
   resource "completions-bash" do
-    url "https://raw.githubusercontent.com/dathere/qsv/22.0.1/contrib/completions/examples/qsv.bash"
-    sha256 "0ff0ee2cc80a6e4d1abe51d2f4fb7a4eb2f9c2c774ec482f89a218d7dda432e1"
+    url "https://raw.githubusercontent.com/dathere/qsv/29.0.0/contrib/completions/examples/qsv.bash"
+    sha256 "3f87e2a93c674c2d46d284c8088936e3f958ff461fbc53f7ddf8b7a1cf9852f8"
 
     livecheck do
       formula :parent
@@ -20,8 +20,8 @@ class Qsv < Formula
   end
 
   resource "completions-zsh" do
-    url "https://raw.githubusercontent.com/dathere/qsv/22.0.1/contrib/completions/examples/qsv.zsh"
-    sha256 "96da774fb3310a684028a966a606cd9f29203686f5700dd10adecfedeae0e132"
+    url "https://raw.githubusercontent.com/dathere/qsv/29.0.0/contrib/completions/examples/qsv.zsh"
+    sha256 "436fe2db843eacf228fced8fa118bf88cbe53978034116b15621fb84059c80ef"
 
     livecheck do
       formula :parent
@@ -29,8 +29,8 @@ class Qsv < Formula
   end
 
   resource "completions-fish" do
-    url "https://raw.githubusercontent.com/dathere/qsv/22.0.1/contrib/completions/examples/qsv.fish"
-    sha256 "13af39213d58d7e819ed22c3e7dde27b4201b2635565bc7f5c1d15048a142f2e"
+    url "https://raw.githubusercontent.com/dathere/qsv/29.0.0/contrib/completions/examples/qsv.fish"
+    sha256 "3280baebee224baa60fbbd45795604c133704a5cc5569bc3b20d78ca5f1c17d4"
 
     livecheck do
       formula :parent
