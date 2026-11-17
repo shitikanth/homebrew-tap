@@ -13,16 +13,28 @@ class Qsv < Formula
   resource "completions-bash" do
     url "https://raw.githubusercontent.com/dathere/qsv/22.0.1/contrib/completions/examples/qsv.bash"
     sha256 "0ff0ee2cc80a6e4d1abe51d2f4fb7a4eb2f9c2c774ec482f89a218d7dda432e1"
+
+    livecheck do
+      formula :parent
+    end
   end
 
   resource "completions-zsh" do
     url "https://raw.githubusercontent.com/dathere/qsv/22.0.1/contrib/completions/examples/qsv.zsh"
     sha256 "96da774fb3310a684028a966a606cd9f29203686f5700dd10adecfedeae0e132"
+
+    livecheck do
+      formula :parent
+    end
   end
 
   resource "completions-fish" do
     url "https://raw.githubusercontent.com/dathere/qsv/22.0.1/contrib/completions/examples/qsv.fish"
     sha256 "13af39213d58d7e819ed22c3e7dde27b4201b2635565bc7f5c1d15048a142f2e"
+
+    livecheck do
+      formula :parent
+    end
   end
 
   def install
